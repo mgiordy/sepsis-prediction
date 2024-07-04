@@ -1,0 +1,565 @@
+drop table IF EXISTS general_data;
+drop table IF EXISTS observation_table;
+drop table IF EXISTS ordinal_vars_ref;
+drop table IF EXISTS pharma_table;
+
+CREATE TABLE general_data
+(
+    patientid integer,
+    admissiontime timestamp without time zone,
+    sex CHAR(1),
+    age integer,
+    discharge_status text
+);
+
+CREATE TABLE observation_table
+(
+    date_time timestamp without time zone,
+    enter_time timestamp without time zone,
+    patientid integer,
+    status_obs smallint,
+    stringvalue TEXT,
+    type_obs text,
+    value_obs real,
+    variableid integer
+);
+
+
+CREATE TABLE ordinal_vars_ref
+(
+    variableid integer,
+    code integer,
+    stringvalue text
+);
+
+
+CREATE TABLE pharma_table
+(
+    patientid integer,
+    pharmaid integer,
+    givenat timestamp without time zone,
+    eneteredentryat timestamp without time zone,
+    givendose real,
+    cumulativedose double precision,
+    fluidamount_calc double precision,
+    cumulfluidamount_calc double precision,
+    doseunit text,
+    route_pharma text,
+    infusionid integer,
+    typeid smallint,
+    subtypeid double precision,
+    recordstatus smallint
+);
+
+
+COPY general_data FROM 'general_table.csv' DELIMITER ',' CSV HEADER;
+COPY ordinal_vars_ref FROM 'ordinal_vars_ref.csv' DELIMITER ',' CSV HEADER;
+
+
+COPY observation_table FROM '/observation/csv/part-0.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-1.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-2.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-3.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-4.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-5.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-6.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-7.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-8.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-9.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-10.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-11.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-12.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-13.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-14.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-15.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-16.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-17.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-18.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-19.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-20.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-21.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-22.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-23.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-24.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-25.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-26.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-27.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-28.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-29.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-30.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-31.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-32.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-33.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-34.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-35.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-36.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-37.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-38.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-39.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-40.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-41.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-42.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-43.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-44.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-45.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-46.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-47.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-48.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-49.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-50.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-51.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-52.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-53.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-54.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-55.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-56.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-57.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-58.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-59.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-60.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-61.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-62.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-63.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-64.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-65.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-66.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-67.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-68.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-69.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-70.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-71.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-72.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-73.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-74.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-75.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-76.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-77.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-78.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-79.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-80.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-81.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-82.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-83.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-84.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-85.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-86.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-87.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-88.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-89.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-90.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-91.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-92.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-93.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-94.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-95.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-96.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-97.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-98.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-99.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-100.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-101.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-102.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-103.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-104.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-105.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-106.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-107.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-108.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-109.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-110.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-111.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-112.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-113.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-114.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-115.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-116.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-117.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-118.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-119.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-120.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-121.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-122.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-123.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-124.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-125.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-126.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-127.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-128.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-129.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-130.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-131.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-132.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-133.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-134.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-135.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-136.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-137.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-138.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-139.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-140.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-141.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-142.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-143.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-144.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-145.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-146.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-147.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-148.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-149.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-150.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-151.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-152.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-153.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-154.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-155.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-156.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-157.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-158.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-159.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-160.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-161.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-162.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-163.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-164.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-165.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-166.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-167.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-168.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-169.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-170.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-171.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-172.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-173.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-174.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-175.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-176.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-177.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-178.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-179.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-180.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-181.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-182.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-183.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-184.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-185.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-186.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-187.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-188.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-189.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-190.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-191.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-192.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-193.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-194.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-195.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-196.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-197.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-198.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-199.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-200.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-201.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-202.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-203.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-204.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-205.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-206.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-207.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-208.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-209.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-210.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-211.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-212.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-213.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-214.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-215.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-216.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-217.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-218.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-219.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-220.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-221.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-222.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-223.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-224.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-225.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-226.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-227.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-228.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-229.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-230.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-231.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-232.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-233.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-234.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-235.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-236.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-237.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-238.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-239.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-240.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-241.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-242.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-243.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-244.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-245.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-246.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-247.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-248.csv' DELIMITER ',' CSV HEADER;
+COPY observation_table FROM '/observation/csv/part-249.csv' DELIMITER ',' CSV HEADER;
+
+
+
+
+COPY pharma_table FROM '/pharma/csv/part-0.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-1.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-2.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-3.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-4.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-5.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-6.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-7.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-8.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-9.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-10.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-11.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-12.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-13.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-14.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-15.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-16.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-17.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-18.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-19.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-20.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-21.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-22.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-23.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-24.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-25.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-26.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-27.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-28.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-29.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-30.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-31.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-32.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-33.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-34.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-35.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-36.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-37.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-38.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-39.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-40.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-41.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-42.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-43.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-44.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-45.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-46.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-47.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-48.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-49.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-50.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-51.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-52.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-53.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-54.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-55.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-56.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-57.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-58.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-59.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-60.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-61.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-62.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-63.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-64.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-65.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-66.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-67.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-68.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-69.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-70.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-71.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-72.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-73.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-74.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-75.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-76.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-77.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-78.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-79.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-80.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-81.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-82.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-83.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-84.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-85.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-86.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-87.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-88.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-89.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-90.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-91.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-92.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-93.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-94.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-95.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-96.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-97.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-98.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-99.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-100.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-101.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-102.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-103.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-104.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-105.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-106.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-107.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-108.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-109.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-110.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-111.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-112.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-113.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-114.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-115.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-116.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-117.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-118.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-119.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-120.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-121.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-122.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-123.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-124.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-125.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-126.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-127.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-128.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-129.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-130.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-131.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-132.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-133.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-134.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-135.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-136.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-137.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-138.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-139.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-140.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-141.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-142.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-143.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-144.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-145.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-146.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-147.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-148.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-149.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-150.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-151.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-152.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-153.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-154.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-155.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-156.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-157.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-158.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-159.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-160.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-161.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-162.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-163.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-164.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-165.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-166.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-167.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-168.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-169.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-170.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-171.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-172.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-173.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-174.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-175.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-176.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-177.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-178.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-179.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-180.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-181.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-182.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-183.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-184.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-185.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-186.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-187.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-188.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-189.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-190.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-191.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-192.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-193.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-194.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-195.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-196.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-197.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-198.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-199.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-200.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-201.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-202.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-203.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-204.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-205.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-206.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-207.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-208.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-209.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-210.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-211.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-212.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-213.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-214.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-215.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-216.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-217.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-218.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-219.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-220.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-221.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-222.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-223.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-224.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-225.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-226.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-227.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-228.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-229.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-230.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-231.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-232.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-233.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-234.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-235.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-236.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-237.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-238.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-239.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-240.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-241.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-242.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-243.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-244.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-245.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-246.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-247.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-248.csv' DELIMITER ',' CSV HEADER;
+COPY pharma_table FROM '/pharma/csv/part-249.csv' DELIMITER ',' CSV HEADER;
+
+
+CREATE INDEX observation_table_index ON observation_table (patientid)

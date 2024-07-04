@@ -1,0 +1,35 @@
+---
+seed: 42
+project_name: "enter_project_name"
+entity: "entity"
+wandb: True
+datasets: ["hirid_"]
+custom_sampler: "undersampling" # "" for deafult sampler
+k_splits: 5
+debug_grad: False
+kernel_size: 3
+batch_norm: True
+max_pooling: [2, 2, 2, 2]
+online_train: True
+online_test: True
+# Overwritable by command line
+model: "tcn"
+batch_size: 32
+epochs: 10
+weight_decay: 0
+lr_scheduler: "step"
+lr: 0.001
+step_lr_epoch_div: 4
+step_lr_div_factor: 0.2
+num_channels: [32, 32, 32, 32]
+dense_layers: [32]
+k: 1
+time_to_sepsis_cutoff: 480
+data_freq_min: 2
+data_minutes: 240
+prediction_minutes: 240
+online_threshold: 8
+online_stride: 10 # minutes
+control_window_cutoff: 2160
+col_to_keep: ["heartrate","sbp","dbp","spo2","respiration","temperature"]
+...

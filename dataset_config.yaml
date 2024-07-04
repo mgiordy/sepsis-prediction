@@ -1,0 +1,9 @@
+---
+seed: 42
+entity: "enter_entity"
+project_name: "enter_project_name"
+wandb: True
+k_splits: 5
+# Overwritable by command line
+dataset: "hirid"
+...

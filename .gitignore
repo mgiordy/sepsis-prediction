@@ -1,0 +1,17 @@
+.DS_Store
+.ipynb_checkpoints
+wandb
+*pht
+*pth
+*png
+*log*
+*temp*
+*.txt
+trained*
+*.pyc
+*.pkl
+*.zip
+*.onnx
+
+generated_datasets/*
+dataset_gen_runs/*
